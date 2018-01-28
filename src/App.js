@@ -55,11 +55,11 @@ class App extends Component {
         <hr/>
         <form>
           <div className="form-row">
-            <div className="form-group col-1">
+            <div className="form-group col-sm-2">
               <label>Paragrahs: </label>
               <Text value={this.state.paras} onChange={this.changeParas.bind(this)}/>
             </div>
-            <div className="form-group col-2 offset-1">
+            <div className="form-group col-sm-3 offset-sm-1">
               <label>Output Format: </label>
               <Select value={this.state.format} onChange={this.showHtml.bind(this)}/>
             </div>
