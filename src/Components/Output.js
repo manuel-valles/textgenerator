@@ -11,7 +11,7 @@ class Output extends Component{
 
 	render(){
 		return(
-			<div className="output">
+			<div className="card bg-light output">
 				{this.props.value}
 			</div>
 		);

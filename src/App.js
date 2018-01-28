@@ -6,13 +6,15 @@ import axios from 'axios';
 import Output from './Components/Output';
 // Import the Select Component
 import Select from './Components/Controls/Select';
+// Import the Select Component
+import Text from './Components/Controls/Text';
 
 class App extends Component {
   constructor(props){
     super(props);
 
     this.state = {
-      paras: 5,
+      paras: 3,
       format: 'html',
       text: ''
     }
@@ -39,17 +41,29 @@ class App extends Component {
     // change value and return a new sample text
     this.setState({format: x}, this.getSampleText);
   }
+
+  changeParas(y){
+    // change value and return a new sample text
+    this.setState({paras: y}, this.getSampleText);
+  }
+
   render() {
     return (
       // Add container class to center everything
       <div className="App container">
-        <h1>Text Generator & React</h1>
+        <h1 className="text-center">Text Generator & React</h1>
         <hr/>
-        <form className="form-inline">
-          <div className="form-group">
-            <label>Output Format</label>
-            <Select value={this.state.format} onChange={this.showHtml.bind(this)}/>
-          </div>
+        <form>
+          <div className="form-row">
+            <div className="form-group col-1">
+              <label>Paragrahs: </label>
+              <Text value={this.state.paras} onChange={this.changeParas.bind(this)}/>
+            </div>
+            <div className="form-group col-2 offset-1">
+              <label>Output Format: </label>
+              <Select value={this.state.format} onChange={this.showHtml.bind(this)}/>
+            </div>
+          </div> 
         </form>
         <Output value={this.state.text}/>
       </div>
