@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 // Import Axios - Promise based HTTP client for the browser and node.js
 import axios from 'axios';
+// Import the Output Component
+import Output from './Components/Output';
 
 class App extends Component {
   constructor(props){
@@ -33,7 +35,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        Text Generator
+        <Output value={this.state.text}/>
       </div>
     );
   }
